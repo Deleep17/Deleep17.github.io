@@ -1,16 +1,62 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Deleep Kamath - Portfolio</title>
-  <style>
-    body { font-family: Arial; text-align: center; padding: 50px; }
-    h1 { color: #333; }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deleep Kamath | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-  <h1>Hi, I'm Deleep Kamath!</h1>
-  <p>Welcome to my portfolio website.</p>
+  <header>
+    <h1>Deleep Kamath</h1>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m an aspiring developer with a passion for creating smart solutions using AI, ML, and full-stack technologies. Currently pursuing hands-on projects to sharpen my skills.</p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-card">
+      <h3>Fish Behavior Analysis</h3>
+      <p>Used YOLO and Graph Neural Networks to analyze fish behavior and detect stress or hunger based on video data.</p>
+    </div>
+    <div class="project-card">
+      <h3>Shrimp Disease Classifier</h3>
+      <p>Trained VGG19 + CBAM for shrimp disease classification using enhanced and background-removed images.</p>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul class="skills-list">
+      <li>Python</li>
+      <li>Machine Learning</li>
+      <li>Deep Learning</li>
+      <li>YOLOv8</li>
+      <li>React (Basic)</li>
+      <li>HTML/CSS/JS</li>
+    </ul>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: kamathdeleep876@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/Deleep17" target="_blank">Deleep17</a></p>
+  </section>
+
+  <footer>
+    <p>© 2025 Deleep Kamath. All rights reserved.</p>
+  </footer>
 </body>
 </html>
