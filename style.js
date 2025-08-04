@@ -1,9 +1,7 @@
-// Smooth scroll when clicking nav links
-document.querySelectorAll('nav a').forEach(link => {
-    link.addEventListener('click', function (e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      target.scrollIntoView({ behavior: 'smooth' });
-    });
-  });
-  
+// style.js
+
+const toggleBtn = document.getElementById("toggleMode");
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+  toggleBtn.textContent = document.body.classList.contains("dark") ? "☀️" : "🌙";
+});

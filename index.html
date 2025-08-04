@@ -5,58 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Deleep Kamath | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <h1>Deleep Kamath</h1>
-    <nav>
-      <ul>
+    <nav class="navbar">
+      <div class="logo">Deleep Kamath</div>
+      <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><button id="toggleMode">🌙</button></li>
+        <li><a href="Deleep_Kamath_Resume.pdf" download class="resume-btn">Download Resume</a></li>
       </ul>
     </nav>
   </header>
 
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Hello, I'm Deleep 👋</h1>
+      <p>A passionate Web Developer & ML Enthusiast</p>
+    </div>
+  </section>
+
   <section id="about">
     <h2>About Me</h2>
-    <p>I’m an aspiring developer with a passion for creating smart solutions using AI, ML, and full-stack technologies. Currently pursuing hands-on projects to sharpen my skills.</p>
+    <p>
+      I'm a final-year Computer Science student passionate about building intelligent systems and responsive websites. I love solving real-world problems with code.
+    </p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
-    <div class="project-card">
-      <h3>Fish Behavior Analysis</h3>
-      <p>Used YOLO and Graph Neural Networks to analyze fish behavior and detect stress or hunger based on video data.</p>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>Fish Disease Classifier</h3>
+        <p>Used VGG19 with CBAM to detect fish diseases from images with high accuracy.</p>
+      </div>
+      <div class="project-card">
+        <h3>Shrimp Disease Detection</h3>
+        <p>Background removal and contrast enhancement for effective shrimp disease classification.</p>
+      </div>
+      <div class="project-card">
+        <h3>Fish Behavior Analyzer</h3>
+        <p>Analyzed fish movement using GNNs and tracked behavior under different water conditions.</p>
+      </div>
     </div>
-    <div class="project-card">
-      <h3>Shrimp Disease Classifier</h3>
-      <p>Trained VGG19 + CBAM for shrimp disease classification using enhanced and background-removed images.</p>
-    </div>
-  </section>
-
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>Python</li>
-      <li>Machine Learning</li>
-      <li>Deep Learning</li>
-      <li>YOLOv8</li>
-      <li>React (Basic)</li>
-      <li>HTML/CSS/JS</li>
-    </ul>
   </section>
 
   <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: kamathdeleep876@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/Deleep17" target="_blank">Deleep17</a></p>
+    <h2>Contact Me</h2>
+    <p>Email: <a href="mailto:kamathdeleep876@gmail.com">kamathdeleep876@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/Deleep17" target="_blank">github.com/Deleep17</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Deleep Kamath. All rights reserved.</p>
+    <p>&copy; 2025 Deleep Kamath. All rights reserved.</p>
   </footer>
+
+  <script src="style.js"></script>
 </body>
 </html>
