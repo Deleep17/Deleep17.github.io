@@ -1,67 +1,629 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Deleep Kamath | Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Deleep Kamath | AI Researcher & Developer</title>
+
+    <meta name="description" content="Official portfolio of Deleep Kamath, M.Tech Computer Science student exploring Artificial Intelligence, Machine Learning, LLMs, RAG and AI Security.">
+
+    <meta name="author" content="Deleep Kamath">
+    <meta name="theme-color" content="#080e1a">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Custom JavaScript -->
+    <script src="style.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <nav class="navbar">
-      <div class="logo">Deleep Kamath</div>
-      <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><button id="toggleMode">🌙</button></li>
-        <li><a href="Deleep_Kamath_Resume.pdf" download class="resume-btn">Download Resume</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <section id="hero">
-    <div class="hero-content">
-      <h1>Hello, I'm Deleep 👋</h1>
-      <p>A passionate Web Developer & ML Enthusiast</p>
-    </div>
-  </section>
+    <!-- ================= NAVIGATION ================= -->
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I'm a final-year Computer Science student passionate about building intelligent systems and responsive websites. I love solving real-world problems with code.
-    </p>
-  </section>
+    <header class="header">
+        <nav class="navbar container">
 
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="project-grid">
-      <div class="project-card">
-        <h3>Fish Disease Classifier</h3>
-        <p>Used VGG19 with CBAM to detect fish diseases from images with high accuracy.</p>
-      </div>
-      <div class="project-card">
-        <h3>Shrimp Disease Detection</h3>
-        <p>Background removal and contrast enhancement for effective shrimp disease classification.</p>
-      </div>
-      <div class="project-card">
-        <h3>Fish Behavior Analyzer</h3>
-        <p>Analyzed fish movement using GNNs and tracked behavior under different water conditions.</p>
-      </div>
-    </div>
-  </section>
+            <a href="#home" class="logo">Deleep<span>.</span></a>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <p>Email: <a href="mailto:kamathdeleep876@gmail.com">kamathdeleep876@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/Deleep17" target="_blank">github.com/Deleep17</a></p>
-  </section>
+            <button class="menu-btn" id="menuBtn"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navLinks">
+                <i class="fas fa-bars"></i>
+            </button>
 
-  <footer>
-    <p>&copy; 2025 Deleep Kamath. All rights reserved.</p>
-  </footer>
+            <ul class="nav-links" id="navLinks">
 
-  <script src="style.js"></script>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#research">Research</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+
+                <li>
+                    <button class="theme-btn" id="toggleMode"
+                        aria-label="Switch color theme">
+                        <i class="fas fa-sun"></i>
+                    </button>
+                </li>
+
+                <li>
+                    <a href="Deleep_Kamath_Resume.pdf"
+                       download
+                       class="resume-btn">
+                        Resume <i class="fas fa-download"></i>
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </header>
+
+
+    <!-- ================= HERO SECTION ================= -->
+
+    <main>
+
+        <section class="hero" id="home">
+
+            <div class="container hero-content">
+
+                <div class="eyebrow">
+                    COMPUTER SCIENCE · AI RESEARCH · DEVELOPMENT
+                </div>
+
+                <h1>
+                    Hi, I'm <span>Deleep Kamath.</span>
+                </h1>
+
+                <h2>
+                    M.Tech Computer Science Student | AI/ML Enthusiast
+                </h2>
+
+                <p>
+                    Exploring the intersection of Artificial Intelligence,
+                    Machine Learning, Large Language Models, and trustworthy AI.
+                    Interested in developing intelligent, secure, and practical
+                    technology solutions through research and innovation.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="#projects" class="btn btn-primary">
+                        Explore My Work
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+
+                    <a href="Deleep_Kamath_Resume.pdf"
+                       download
+                       class="btn btn-outline">
+                        Download Resume
+                        <i class="fas fa-download"></i>
+                    </a>
+
+                </div>
+
+                <div class="social-links">
+
+                    <a href="https://github.com/deleep17"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+
+                    <a href="mailto:kamathdeleep876@gmail.com"
+                       aria-label="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+
+                    <!-- Replace with your actual LinkedIn URL -->
+                    <a href="https://www.linkedin.com/in/your-profile"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       aria-label="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= ABOUT SECTION ================= -->
+
+        <section id="about" class="section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <small>INTRODUCTION</small>
+                    <h2>About Me</h2>
+                    <p>
+                        An overview of my academic background,
+                        interests, and professional goals.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+
+                    <div class="about-text reveal">
+
+                        <p>
+                            I am an M.Tech Computer Science student at
+                            <strong>N.M.A.M. Institute of Technology, Nitte</strong>,
+                            with an undergraduate background in
+                            Information Science and Engineering.
+                        </p>
+
+                        <p>
+                            My interests include Artificial Intelligence,
+                            Machine Learning, Natural Language Processing,
+                            Large Language Models, and
+                            Retrieval-Augmented Generation.
+                        </p>
+
+                        <p>
+                            I am particularly interested in trustworthy AI
+                            and the security challenges associated with
+                            LLM-based applications. Through academic research
+                            and development, I aim to explore practical
+                            approaches to building reliable intelligent systems.
+                        </p>
+
+                    </div>
+
+                    <div class="info-card reveal">
+
+                        <div class="info-item">
+                            <strong>
+                                <i class="fas fa-graduation-cap"></i>
+                                Education
+                            </strong>
+                            <span>M.Tech in Computer Science</span>
+                        </div>
+
+                        <div class="info-item">
+                            <strong>
+                                <i class="fas fa-university"></i>
+                                Institution
+                            </strong>
+                            <span>N.M.A.M. Institute of Technology, Nitte</span>
+                        </div>
+
+                        <div class="info-item">
+                            <strong>
+                                <i class="fas fa-map-marker-alt"></i>
+                                Location
+                            </strong>
+                            <span>India</span>
+                        </div>
+
+                        <div class="info-item">
+                            <strong>
+                                <i class="fas fa-envelope"></i>
+                                Email
+                            </strong>
+                            <span>
+                                <a href="mailto:kamathdeleep876@gmail.com">
+                                    kamathdeleep876@gmail.com
+                                </a>
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= EDUCATION SECTION ================= -->
+
+        <section id="education" class="section alternate-section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <small>ACADEMIC BACKGROUND</small>
+                    <h2>Education</h2>
+                    <p>
+                        My academic journey in Computer Science
+                        and Information Technology.
+                    </p>
+                </div>
+
+                <div class="education-list">
+
+                    <article class="education-card reveal">
+
+                        <div class="education-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+
+                        <div>
+                            <h3>Master of Technology — Computer Science</h3>
+                            <p class="institution">
+                                N.M.A.M. Institute of Technology, Nitte
+                            </p>
+                            <span class="education-status">Currently Pursuing</span>
+                        </div>
+
+                    </article>
+
+                    <article class="education-card reveal">
+
+                        <div class="education-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+
+                        <div>
+                            <h3>
+                                Bachelor of Engineering —
+                                Information Science and Engineering
+                            </h3>
+                            <p class="institution">
+                                N.M.A.M. Institute of Technology, Nitte
+                            </p>
+                            <span class="education-status">Completed</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= RESEARCH SECTION ================= -->
+
+        <section id="research" class="section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <small>ACADEMIC RESEARCH</small>
+                    <h2>Research & Interests</h2>
+                    <p>
+                        Exploring security, reliability, and intelligent
+                        information retrieval in modern AI systems.
+                    </p>
+                </div>
+
+                <article class="research-card reveal">
+
+                    <span class="research-label">
+                        FEATURED RESEARCH PROJECT
+                    </span>
+
+                    <h3>
+                        CTG-RAG: A Cascaded, Calibrated and Explainable
+                        Trust Guard
+                    </h3>
+
+                    <p>
+                        Researching a security framework for
+                        Retrieval-Augmented Generation systems to identify
+                        and mitigate multiple poisoning and injection attacks.
+                        The approach focuses on evaluating retrieved passages
+                        through trust assessment, explainability, and
+                        uncertainty-aware filtering before information
+                        reaches the language model.
+                    </p>
+
+                    <div class="tag-list">
+                        <span class="tag">RAG</span>
+                        <span class="tag">LLM Security</span>
+                        <span class="tag">Trustworthy AI</span>
+                        <span class="tag">Data Poisoning</span>
+                        <span class="tag">Prompt Injection</span>
+                        <span class="tag">Explainable AI</span>
+                    </div>
+
+                </article>
+
+                <div class="interest-grid">
+
+                    <div class="interest-item reveal">
+                        <i class="fas fa-brain"></i>
+                        <span>Artificial Intelligence</span>
+                    </div>
+
+                    <div class="interest-item reveal">
+                        <i class="fas fa-robot"></i>
+                        <span>Large Language Models</span>
+                    </div>
+
+                    <div class="interest-item reveal">
+                        <i class="fas fa-shield-halved"></i>
+                        <span>AI Security</span>
+                    </div>
+
+                    <div class="interest-item reveal">
+                        <i class="fas fa-database"></i>
+                        <span>Retrieval-Augmented Generation</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= PROJECTS SECTION ================= -->
+
+        <section id="projects" class="section alternate-section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <small>SELECTED WORK</small>
+                    <h2>Projects</h2>
+                    <p>
+                        Academic and technical projects focused on
+                        artificial intelligence, machine learning,
+                        and intelligent systems.
+                    </p>
+                </div>
+
+                <div class="project-grid">
+
+                    <article class="project-card reveal">
+
+                        <div class="project-icon">
+                            <i class="fas fa-shield-halved"></i>
+                        </div>
+
+                        <h3>CTG-RAG</h3>
+
+                        <p>
+                            A trust-aware security framework designed to
+                            defend Retrieval-Augmented Generation systems
+                            against poisoning and prompt-injection attacks.
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">Python</span>
+                            <span class="tag">RAG</span>
+                            <span class="tag">FAISS</span>
+                            <span class="tag">LLM Security</span>
+                        </div>
+
+                        <a href="https://github.com/deleep17"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="project-link">
+                            View GitHub
+                            <i class="fas fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </article>
+
+
+                    <article class="project-card reveal">
+
+                        <div class="project-icon">
+                            <i class="fas fa-fish"></i>
+                        </div>
+
+                        <h3>Fish Disease Classification</h3>
+
+                        <p>
+                            Developed an image-based fish disease
+                            classification approach using VGG19 and
+                            Convolutional Block Attention Module (CBAM).
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">Python</span>
+                            <span class="tag">Deep Learning</span>
+                            <span class="tag">VGG19</span>
+                            <span class="tag">CBAM</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card reveal">
+
+                        <div class="project-icon">
+                            <i class="fas fa-water"></i>
+                        </div>
+
+                        <h3>Shrimp Disease Detection</h3>
+
+                        <p>
+                            Explored image preprocessing techniques,
+                            including background removal and contrast
+                            enhancement for shrimp disease classification.
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">Python</span>
+                            <span class="tag">Computer Vision</span>
+                            <span class="tag">Image Processing</span>
+                        </div>
+
+                    </article>
+
+
+                    <article class="project-card reveal">
+
+                        <div class="project-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+
+                        <h3>Fish Behavior Analysis</h3>
+
+                        <p>
+                            Explored fish movement and behavior analysis
+                            using Graph Neural Networks and tracking
+                            techniques under different water conditions.
+                        </p>
+
+                        <div class="tag-list">
+                            <span class="tag">Python</span>
+                            <span class="tag">GNN</span>
+                            <span class="tag">Deep Learning</span>
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= SKILLS SECTION ================= -->
+
+        <section id="skills" class="section">
+
+            <div class="container">
+
+                <div class="section-heading reveal">
+                    <small>TECHNICAL EXPERTISE</small>
+                    <h2>Technical Skills</h2>
+                    <p>
+                        Technologies and tools I use for
+                        development and research.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+
+                    <article class="skill-card reveal">
+                        <i class="fas fa-code"></i>
+                        <h3>Programming</h3>
+                        <p>Python, Java, C</p>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI & Machine Learning</h3>
+                        <p>TensorFlow, Scikit-learn, OpenCV, Deep Learning</p>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <i class="fas fa-robot"></i>
+                        <h3>LLM & RAG</h3>
+                        <p>FAISS, Hugging Face, Sentence Transformers, NLP</p>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <i class="fas fa-globe"></i>
+                        <h3>Web Development</h3>
+                        <p>HTML, CSS, Bootstrap, React.js</p>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <i class="fas fa-screwdriver-wrench"></i>
+                        <h3>Development Tools</h3>
+                        <p>Git, GitHub, VS Code, Jupyter Notebook</p>
+                    </article>
+
+                    <article class="skill-card reveal">
+                        <i class="fas fa-cloud"></i>
+                        <h3>Platforms</h3>
+                        <p>Google Colab, Jupyter Notebook</p>
+                    </article>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CONTACT SECTION ================= -->
+
+        <section id="contact" class="section alternate-section">
+
+            <div class="container">
+
+                <div class="contact-box reveal">
+
+                    <div class="section-heading">
+                        <small>GET IN TOUCH</small>
+                        <h2>Let's Connect</h2>
+                    </div>
+
+                    <p>
+                        Interested in research collaborations,
+                        technical discussions, or professional opportunities?
+                        Feel free to get in touch.
+                    </p>
+
+                    <a href="mailto:kamathdeleep876@gmail.com"
+                       class="btn btn-primary">
+                        <i class="fas fa-envelope"></i>
+                        Contact Me
+                    </a>
+
+                    <div class="contact-socials">
+
+                        <a href="https://github.com/deleep17"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+
+                        <a href="https://www.linkedin.com/in/your-profile"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="LinkedIn">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <p>© <span id="currentYear"></span> Deleep Kamath. All rights reserved.</p>
+
+            <p>Research · Development · Continuous Learning</p>
+
+        </div>
+
+    </footer>
+
 </body>
 </html>
+```
