@@ -1,159 +1,178 @@
-```javascript
-/* =========================================
-   1. DARK / LIGHT MODE
-========================================= */
+/* =========================================================
+   DELEEP KAMATH — PORTFOLIO INTERACTIONS
+========================================================= */
 
-const toggleMode = document.getElementById("toggleMode");
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
+  const themeToggle = document.getElementById("themeToggle");
+  const menuToggle = document.getElementById("menuToggle");
+  const navMenu = document.getElementById("navMenu");
+  const navLinks = document.querySelectorAll(".nav-link");
+  const yearElement = document.getElementById("currentYear");
 
-// Restore saved theme
-const savedTheme = localStorage.getItem("portfolio-theme");
+  /* -----------------------------------------
+     1. Automatic footer year
+  ----------------------------------------- */
 
-if (savedTheme === "light") {
-    document.body.classList.add("light");
-}
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
 
-// Update theme button icon
-function updateThemeIcon() {
+  /* -----------------------------------------
+     2. Dark / light theme
+  ----------------------------------------- */
 
-    const isLight = document.body.classList.contains("light");
+  const savedTheme = localStorage.getItem("portfolio-theme");
 
-    toggleMode.innerHTML = isLight
-        ? '<i class="fas fa-moon"></i>'
-        : '<i class="fas fa-sun"></i>';
+  if (savedTheme === "light") {
+    body.setAttribute("data-theme", "light");
+  }
 
-    toggleMode.setAttribute(
+  function updateThemeIcon() {
+    const isLight = body.getAttribute("data-theme") === "light";
+
+    if (themeToggle) {
+      themeToggle.innerHTML = isLight
+        ? '<i class="fa-solid fa-moon"></i>'
+        : '<i class="fa-solid fa-sun"></i>';
+
+      themeToggle.setAttribute(
         "aria-label",
-        isLight ? "Switch to dark mode" : "Switch to light mode"
-    );
-}
-
-updateThemeIcon();
-
-// Toggle theme
-toggleMode.addEventListener("click", () => {
-
-    document.body.classList.toggle("light");
-
-    const isLight = document.body.classList.contains("light");
-
-    localStorage.setItem(
-        "portfolio-theme",
-        isLight ? "light" : "dark"
-    );
-
-    updateThemeIcon();
-
-});
-
-
-/* =========================================
-   2. MOBILE NAVIGATION
-========================================= */
-
-const menuBtn = document.getElementById("menuBtn");
-const navLinks = document.getElementById("navLinks");
-
-function closeMenu() {
-
-    navLinks.classList.remove("active");
-
-    menuBtn.setAttribute("aria-expanded", "false");
-
-    menuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-
-}
-
-// Open and close mobile menu
-menuBtn.addEventListener("click", () => {
-
-    const isOpen = navLinks.classList.toggle("active");
-
-    menuBtn.setAttribute("aria-expanded", isOpen);
-
-    menuBtn.innerHTML = isOpen
-        ? '<i class="fas fa-times"></i>'
-        : '<i class="fas fa-bars"></i>';
-
-});
-
-// Close menu when a navigation link is clicked
-document.querySelectorAll(".nav-links a").forEach(link => {
-
-    link.addEventListener("click", closeMenu);
-
-});
-
-// Close menu when clicking outside
-document.addEventListener("click", (event) => {
-
-    const clickedInsideMenu = navLinks.contains(event.target);
-    const clickedMenuButton = menuBtn.contains(event.target);
-
-    if (!clickedInsideMenu && !clickedMenuButton) {
-        closeMenu();
+        isLight ? "Switch to dark theme" : "Switch to light theme"
+      );
     }
+  }
 
-});
+  updateThemeIcon();
 
-// Close menu when switching to desktop width
-window.addEventListener("resize", () => {
+  if (themeToggle) {
+    themeToggle.addEventListener("click", () => {
+      const isLight = body.getAttribute("data-theme") === "light";
 
-    if (window.innerWidth > 800) {
+      if (isLight) {
+        body.removeAttribute("data-theme");
+        localStorage.setItem("portfolio-theme", "dark");
+      } else {
+        body.setAttribute("data-theme", "light");
+        localStorage.setItem("portfolio-theme", "light");
+      }
+
+      updateThemeIcon();
+    });
+  }
+
+  /* -----------------------------------------
+     3. Mobile navigation
+  ----------------------------------------- */
+
+  function closeMenu() {
+    if (!navMenu || !menuToggle) return;
+
+    navMenu.classList.remove("open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Open navigation");
+    menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+  }
+
+  if (menuToggle && navMenu) {
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navMenu.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Close navigation" : "Open navigation"
+      );
+
+      menuToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+    });
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (event) => {
+      const clickedInsideMenu = navMenu.contains(event.target);
+      const clickedToggle = menuToggle.contains(event.target);
+
+      if (!clickedInsideMenu && !clickedToggle) {
         closeMenu();
-    }
+      }
+    });
 
-});
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 760) {
+        closeMenu();
+      }
+    });
+  }
 
+  /* -----------------------------------------
+     4. Scroll reveal animations
+  ----------------------------------------- */
 
-/* =========================================
-   3. SCROLL REVEAL ANIMATIONS
-========================================= */
+  const revealElements = document.querySelectorAll(".reveal");
 
-const revealElements = document.querySelectorAll(".reveal");
-
-const prefersReducedMotion = window.matchMedia(
+  const prefersReducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
-).matches;
+  ).matches;
 
-if ("IntersectionObserver" in window && !prefersReducedMotion) {
-
-    const observer = new IntersectionObserver((entries, observer) => {
-
-        entries.forEach(entry => {
-
-            if (entry.isIntersecting) {
-
-                entry.target.classList.add("visible");
-
-                observer.unobserve(entry.target);
-
-            }
-
+  if ("IntersectionObserver" in window && !prefersReducedMotion) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
         });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -35px 0px"
+      }
+    );
 
-    }, {
-        threshold: 0.12
+    revealElements.forEach((element) => {
+      revealObserver.observe(element);
     });
-
-    revealElements.forEach(element => {
-        observer.observe(element);
+  } else {
+    revealElements.forEach((element) => {
+      element.classList.add("visible");
     });
+  }
 
-} else {
+  /* -----------------------------------------
+     5. Active navigation link on scroll
+  ----------------------------------------- */
 
-    // Display all content when animations are unsupported or disabled
-    revealElements.forEach(element => {
-        element.classList.add("visible");
+  const sections = document.querySelectorAll("main section[id]");
+
+  if ("IntersectionObserver" in window) {
+    const sectionObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const currentId = entry.target.getAttribute("id");
+
+            navLinks.forEach((link) => {
+              const isCurrent = link.getAttribute("href") === `#${currentId}`;
+
+              link.classList.toggle("active", isCurrent);
+            });
+          }
+        });
+      },
+      {
+        rootMargin: "-30% 0px -60% 0px"
+      }
+    );
+
+    sections.forEach((section) => {
+      sectionObserver.observe(section);
     });
+  }
+});
 
-}
-
-
-/* =========================================
-   4. AUTOMATIC FOOTER YEAR
-========================================= */
-
-const currentYear = document.getElementById("currentYear");
-
-currentYear.textContent = new Date().getFullYear();
-```
